@@ -6,15 +6,19 @@
     <title>Главная</title>
 </head>
 <body>
+
 <div style="background:green; color:white; height:100px;">
     <p align="center" style="color:white; font-size:30px">
-    <a href="{% url 'main:hello' %}"><img src="media/img/main.jpg"  width="100px" height="100px">Главаная страница</a>
-
+        {% if main != "1" %}
+        <a href="{% url 'main:hello' %}">
+            <img src="media/img/main.jpg"  width="100px" height="100px">
+            Главаная страница
+        </a>
+        {% endif %}
 </div>
 <div style="background:orange" align="justify" >
     <div align="right" style="padding: 5px">
     <table align="justify" >
-
         {% if user.is_authenticated %}
         <span>{{user.username}}</span>
          <tr><a href="{% url 'main:logout' %}">Выйти</a></tr>
@@ -27,5 +31,7 @@
     </table>
         </div>
 </div>
+{% block main %}
+{% endblock %}
 </body>
 </html>

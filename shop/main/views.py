@@ -10,7 +10,8 @@ from .forms import NewUserForm
 
 
 def main_page(request):
-    return render(request, 'main_page.html')
+    context = {'main':1}
+    return render(request, 'main_page.html', context)
 
 
 def new_user(request):

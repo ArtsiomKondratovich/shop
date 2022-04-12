@@ -1,15 +1,8 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Регистрация</title>
-</head>
-<body>
+{% extends "main_page.html" %}
+{% block main %}
 <form action="" method="POST">
     {% csrf_token %}
   {{form.as_p}}
     <button type="submit">Регистарция</button>
 </form>
-
-</body>
-</html>
+{% endblock %}
