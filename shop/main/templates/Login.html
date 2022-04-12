@@ -16,7 +16,8 @@
 <!--      <label for="floatingPassword">Пароль</label>-->
 <!--    </div>-->
 <!--</main>-->
-
+{% block sidebar %}
+{% endblock %}
 <form action="" method="POST">
     {% csrf_token %}
     {{form.as_p}}
