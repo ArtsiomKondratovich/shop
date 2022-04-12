@@ -1,6 +1,7 @@
 from django.contrib.auth.models import User
 from django.contrib.auth.views import LoginView, LogoutView
 from django.contrib.sessions.backends.db import SessionStore
+from django.http import HttpResponse
 from django.shortcuts import render, redirect
 
 # Create your views here.
@@ -15,11 +16,10 @@ from .models import Shop, City
 class main_page(ListView):
     def pp(self):
         print(self.__dict__)
+
     template_name = 'main_page.html'
     model = Shop
     context_object_name = 'objects'
-
-
 
 
 def new_user(request):

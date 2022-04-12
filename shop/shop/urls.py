@@ -25,5 +25,6 @@ from shop import settings
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('main.urls')),
+    path('catalog', include('catalog.urls')),
 ]
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
