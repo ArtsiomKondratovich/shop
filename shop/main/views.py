@@ -43,3 +43,7 @@ class Login(LoginView):
 
 class Logout(LogoutView):
     next_page = "main:hello"
+
+
+def profile(request, pk):
+    return render(request, 'profile.html')
